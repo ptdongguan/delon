@@ -82,7 +82,9 @@ export class AppModule { }
 你可以随时覆盖它们，例如：
 
 ```ts
-// delon.module.ts
+// delon.module.ts 误导，其实在app.module.ts里面加。文档是不是要更新下啊？
+// 后面的static forRoot不需要 在providers 加一行         { provide: DelonAuthConfig, useFactory: delonAuthConfig}
+
 import { DelonAuthConfig } from '@delon/auth';
 export function delonAuthConfig(): DelonAuthConfig {
   return Object.assign(new DelonAuthConfig(), <DelonAuthConfig>{
